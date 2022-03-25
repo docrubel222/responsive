@@ -1,0 +1,117 @@
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: Arial;}
+body{    background: #111111;}
+.container{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10%;
+    color: #fff;
+}
+.box{
+    width: 30%;
+    background: rgba(255, 255, 255, .2);
+    padding: 15px 4%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background: cyan;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    box-shadow: 0px 5px 20px rgba(0,0,0,.2);
+}
+.box h1{
+    text-align: center;
+    color: #4d4d4d;
+    font-family: cursive;
+}
+.box h2{
+    margin: 30px 0px 50px 0px;
+    text-align: center;
+}
+.box p{
+    margin: 20px 0px;
+}
+.btn{
+    margin: 40px 0px;
+}
+.btn button{
+    width: 100%;
+    padding: 15px 0px;
+    border: none;
+    background: cyan;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    transition: .3s all ease-in-out;
+    overflow: hidden;
+
+}
+.btn button:hover{
+    color: #fff;
+    background: #111111;;
+    box-shadow: 5px 5px 20px rgba(0,0,0,.2);
+}
+.btn button::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, .5);
+    top: 0;
+    left: 50%;
+    transition: .3s all ease-in-out;
+}   
+.btn button:hover::after{
+    width: 100%;
+    left: 0%;
+}
+@media (max-width: 450px) {
+.container{
+    display: block;
+    padding: 0;
+    height: 0;
+    top: 0;
+} 
+.box{
+    width: 80%;
+    margin: 30px auto;
+}   
+}
+@media (min-width: 451px) and (max-width: 768px) {
+.container{
+    display: block;
+    padding: 0;
+    height: 0;
+    top: 0;
+} 
+.box{
+    width: 80%;
+    margin: 30px auto;
+}
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+.container{
+    display: block;
+    padding: 0;
+    height: 0;
+    top: 0;
+} 
+.box{
+    display: inline-block;
+    width: 40%;
+    margin: 35px;
+}
+}
